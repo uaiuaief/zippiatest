@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sm: 13px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+.primary-btn {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: var(--md);
+  background-color: #ff6000;
+  color: white;
+  border: 1px solid #ff6000;
+  border-radius: 0 3px 3px 0;
+  height: 48px;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.primary-btn:hover {
+  background-color: #e95800;
+}
+
+.secondary-btn {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: var(--md);
+  color: #3174ee;
+  background-color: white;
+  border: 1px solid #3174ee;
+  border-radius: 3px;
+  height: 48px;
+  cursor: pointer;
+  padding: 0 1rem;
+
+  margin-left: 10px;
+}
+
+.secondary-btn.active {
+  background-color: #3174ee;
+  color: white;
+}
+
+#main-container {
+  max-width: 1440px;
+  width: 600px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+#main-container h1.title {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+}
+
+#jobs-container {
+  margin-top: 35px;
+}
+
+#jobs-container .search-options {
+  margin-top: 30px;
+}
+
+#jobs-container .search-options form {
+  display: flex;
+  align-items: center;
+}
+
+#jobs-container .search-options input {
+  flex-grow: 9;
+  height: 48px;
+  padding: 0 .8rem;
+  font-size: var(--md);
+  border: 1px solid #DDD;
+  border-radius: 3px 0 0 3px;
+}
+
+#jobs-container .search-options input:focus {
+  outline: none;
+}
+
+#jobs-container .job-list {
+  margin-top: 15px;
+}
+
+.card {
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  margin-top: 15px;
+}
+
+.card .job-title {
+  font-size: var(--lg);
+  font-weight: 600;
+  color: #333;
+}
+
+.card .company-name {
+  font-weight: 600;
+  font-size: var(--sm);
+  color: #5c5c5c;
+  margin-top: .4rem;
+}
+
+.card .short-description {
+  font-weight: 400;
+  font-size: var(--sm);
+  color: #333;
+  color: #5c5c5c;
+  margin-top: .6rem;
+  /* line-height: 20px; */
+}
+
+@media (max-width: 500px) {
+  :root {
+    --sm: 18px;
+    --md: 21px;
+    --lg: 23px;
+  }
+
+  #jobs-container .search-options {
+    width: 95%;
+    margin: auto;
+  }
+  
+  #jobs-container .job-list {
+    width: 95%;
+    margin: auto;
+  }
+
+}
