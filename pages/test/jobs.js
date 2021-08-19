@@ -11,14 +11,24 @@ class jobs extends Component {
         dateFilter: false,
     }
 
+    /**
+     * Applies filterByCompanyName and filterByDate to jobs array and return the filtered array
+     * @param {Array} jobs 
+     * @returns {Array} - The filtered array
+     */
     filterJobs = (jobs) => {
         const filtered = this.filterByDate(this.filterByCompanyName(jobs))
         return filtered
     }
 
+    /**
+     * If companyNameFilter is null returns unchanged jobs array
+     * else filters the array matching the string companyNameFilter
+     * @param {Array} jobs 
+     * @returns {Array} - Array matching companyNameFilter
+     */
     filterByCompanyName = (jobs) => {
         if (!this.state.companyNameFilter) return jobs
-
 
         let regex = new RegExp(this.state.companyNameFilter.toLowerCase())
         const filtered = jobs.filter(each => {
@@ -34,6 +44,12 @@ class jobs extends Component {
         return filtered
     }
 
+    /**
+     * If dateFilter is false returns unchanged jobs array
+     * else filters the array with jobs that have been posted in the last 7 days
+     * @param {Array} jobs 
+     * @returns {Array} - Array of jobs that have been postedin the last 7 days
+     */
     filterByDate = (jobs) => {
         if (!this.state.dateFilter) return jobs
 
@@ -76,6 +92,7 @@ class jobs extends Component {
             })
         })
     }
+
     render() {
         return (
             <div id="main-container">
